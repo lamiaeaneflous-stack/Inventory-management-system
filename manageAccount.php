@@ -1,65 +1,68 @@
+
 <?php
-	include("manageAccountAction.php");
+	include('session.php');
+    $sql = 'SELECT * FROM sales';
+	$result = mysqli_query($db,$sql);
+	$rows = array();
+
+	while($row = mysqli_fetch_array($result)){
+    	$rows[] = $row;
+	}
+	include('inventoryAction.php');
 ?>
-<html html class="html">
-	
+
+<!DOCTYPE html>
+<html lang="en">
+
 	<head>
+		<title>Sales</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login </title>
-		<link rel="stylesheet" href="css/indexAndAccountManageStyle.css">
-		<link rel="stylesheet" href="css/star.css">
-		<script src="js/star.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+		<link rel="stylesheet" type="text/css" href="css/sales.css">
+		<script type="text/javascript">
+			var products = <?php echo json_encode($rows); ?>;
+		</script>
+		<script src="js/dashboard.js"></script>
+		<script src="js/sales.js"></script>
 	</head>
+
 	<body>
-		<div id='stars'></div>
-		<div id='stars2'></div>
-		<div id='stars3'></div>
-		<div class="wrap">
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-			<label class="label">avatar upload(not required)</label>
-			<input type="file" name="fileToUpload" id="fileToUpload">
-			<label class="label">Current Username</label>
-			<input type="text" name="username" required/>
-			<div class="bar">
-				<i></i>
-			</div>
-			<label class="label">New Username</label>
-			<input type="text" name="newUsername" required/>
-			<div class="bar">
-				<i></i>
-			</div>
-			<label class="label">Current Password</label>
-			<input type="password" name="currentPassword" required/>
-			<div class="bar">
-				<i></i>
-			</div>
-			<label class="label">New Password</label>
-			<input type="password" name="newPassword" required/>
-			<div class="bar">
-				<i></i>
-			</div>
-			<label class="label">Confirm new Password</label>
-			<input type="password" name="confirmPassword" required/>
-			<button class="wrapButton" name="submit">submit</button>
-			<div class="error">
-				<?php echo $error; ?>
-			</div>
-			</form>
+		<div id="top-bar">
+			<nav>
+				<ul>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="comment.php">Message</a></li>
+					<li><a href="reference.php" target="_blank">About</a></li>
+					<li><a href="logout.php">Logout</a></li>
+				</ul>
+			</nav>
 		</div>
-		<div class="center">
-			<a class="label" href="index.php">return to index</a>
+
+		<div id="side-navagate-bar">
+			<button type="button" class="toggle-btn" onclick="toggleSideBar()" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<ul>
+				<li><h2 id="logo">Inventory Sales Management</h2></li>
+				<li><a href="sales.php">Sales</a></li>
+				<li><a href="inventory.php">Inventory</a></li>
+			</ul>
 		</div>
-		</br>
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-			<div class="center">
-				<label class="label">reset password</br></label>
-				<input type="password" name="resetPassword" required/></br>
-				<label class="label">(reset to default username and password and delete all data)</br></label>
-				<button class="resetButton" name="reset">reset all</button>
+
+		<div id="block">
+			<div id="main-area">
+				<div id="welcome">
+					<h1>Welcome <?php echo $login_session; ?></h1>
+					<div id="Product_Panel">
+						<h1>Sales Results</h1>
+						<br>
+					</div>
+				</div>
 			</div>
-		</form>
-		
+		</div>
 	</body>
 
 </html>
