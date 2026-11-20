@@ -1,3 +1,4 @@
+
 <?php
 	include('session.php');
     $sql = 'SELECT * FROM product';
@@ -22,8 +23,8 @@
 	}
 ?>
 
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
@@ -34,7 +35,6 @@
 			var products = <?php echo json_encode( $rows ) ?>;
 			var sales = <?php echo json_encode( $salesRows ) ?>;
 		</script>
-
 	</head>
 	<body>
 
@@ -46,73 +46,64 @@
 					<li><a href="reference.php" target="_blank">About</a></li>
 					<li><a href="logout.php">Logout</a></li>
 				</ul>
-				
-				
 			</nav>
 		</div>	
 			
-	
-		<div id = "side-navagate-bar">
-			<div class = "toggle-btn" onclick="toggleSideBar()">
+		<div id="side-navagate-bar">
+			<button type="button" class="toggle-btn" onclick="toggleSideBar()" aria-label="Toggle navigation">
 				<span></span>
 				<span></span>
 				<span></span>
-			</div>
+			</button>
 			
 			<ul>
 				<li><h2 id="logo">Inventory Sales Management</h2></li>
 				<li><a href="sales.php">Sales</a></li>
 				<li><a href="inventory.php">Inventory</a></li>
 			</ul>
-			
 		</div>
 	
-	
 		<div id="block">
-	
 			<div id="main-area">
-				
 				<div id="welcome">
 					<h1>Welcome <?php echo $login_session; ?></h1>	
 				</div>
 				
 				<div id="mini_nav">
 					<div class="mini_board">
-						<div class = "mini_font"><a href="sales.php">Sales</a></div>
+						<div class="mini_font"><a href="sales.php">Sales</a></div>
 						<img src="img/sales.png"/>
 					</div>
 					
 					<div class="mini_board">
-						<div class = "mini_font"><a href="inventory.php">Income</a></div>
+						<div class="mini_font"><a href="inventory.php">Income</a></div>
 						<img src="img/income.png"/>
 					</div>
 					
 					<div class="mini_board">
-						<div class = "mini_font"><a href="comment.php">OnBoard</a></div>
-						<img src="img/chat.png" />
+						<div class="mini_font"><a href="comment.php">OnBoard</a></div>
+						<img src="img/chat.png"/>
 					</div>
 					
 					<div class="mini_board">
-						<div class = "mini_font"><a href="#">Profile</a></div>
+						<div class="mini_font"><a href="#">Profile</a></div>
 						<?php echo '<img src="' . $avatar . '"/>';?>
 					</div>
 				</div>
 				
 				<div id="first_row">
 					<div id="linechar">
-						<canvas id="canvas" ></canvas>
+						<canvas id="canvas"></canvas>
 					</div>
 					<div id="barchar">
-						<canvas id="canvas1" ></canvas>
+						<canvas id="canvas1"></canvas>
 					</div>
 				</div>
-				
 				
 				<div id="second_row">
 					<div id="Tasks_Panel">
 						<h4>Tasks Panel</h4>
-						<h4>     </h4>
-						<div id="message"> </div>
+						<div id="message"></div>
 					</div>
 				</div>
 				
@@ -127,10 +118,9 @@
 			setMonth += 12;
 			var valueMonth=monthNumber[myDate.getMonth()];
 		
-		
 			var one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0, ten = 0, elev = 0, twel = 0;
 		
-		// get cost
+			// get cost
 			for(var i = sales.length-1; i >= 0 ; i--) {
 
 				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
@@ -230,13 +220,10 @@
 						one+= parseFloat(sales[i][4]);
 					}
 				}
-				
-				
 			}
 			
 			var oneP = 0, twoP = 0, threeP = 0, fourP = 0, fiveP = 0, sixP = 0, sevenP = 0, eightP = 0, nineP = 0, tenP = 0, elevP = 0, twelP = 0;
 			
-			
 			for(var i = sales.length-1; i >= 0 ; i--) {
 
 				if(sales[i][8] == monthNumber[(setMonth % 12)] ) {
@@ -336,8 +323,6 @@
 						oneP+= parseFloat(sales[i][6]);
 					}
 				}
-				
-				
 			}
 
 		var myChart = {
@@ -347,16 +332,13 @@
 		    datasets: [{
 		      label: 'Profit',
 		      data: [oneP, twoP, threeP, fourP, fiveP, sixP, sevenP, eightP, nineP, tenP, elevP, twelP],
-		     
 		      backgroundColor: "rgba(104, 163, 221, 0.5)"
-		      
 		    }, {
 		      label: 'Cost',
 		      data: [one, two, three, four, five, six, seven, eight, nine, ten, elev, twel],
 		      backgroundColor: "rgba(245, 0, 0, 0.5)"
 		    }]
 		  },
-		
 		  options: {
 			responsive: true,
             title:{
@@ -394,58 +376,54 @@
 		var index = new Chart(ctx, myChart);
 		
 		var myBarChart = {
-				  type: 'bar',
-				  data: {
-		    labels: [month[(setMonth-11) % 12], month[(setMonth-10) % 12], month[(setMonth-9) % 12], month[(setMonth-8) % 12], month[(setMonth-7) % 12], month[(setMonth-6) % 12], month[(setMonth-5) % 12], month[(setMonth-4) % 12],month[(setMonth-3) % 12], month[(setMonth-2) % 12], month[(setMonth-1) % 12], month[setMonth % 12]],
-				    datasets: [{
-				      label: 'Profit',
-				      data: [oneP, twoP, threeP, fourP, fiveP, sixP, sevenP, eightP, nineP, tenP, elevP, twelP],
-				     
-				      backgroundColor: "rgba(104, 163, 221, 0.5)"
-				      
-				    }, {
-				      label: 'Cost',
-				      data: [one, two, three, four, five, six, seven, eight, nine, ten, elev, twel],
-				      backgroundColor: "rgba(245, 0, 0, 0.5)"
-				    }]
-				  },
-				  options: {
-						responsive: true,
-			            title:{
-			                display:true,
-			                text:'Product Revenue and Expend'
-			            },
-			            tooltips: {
-			                mode: 'index',
-			                intersect: false,
-			            },
-			            hover: {
-			                mode: 'nearest',
-			                intersect: true
-			            },
-			            scales: {
-			                xAxes: [{
-			                    display: true,
-			                    scaleLabel: {
-			                        display: true,
-			                        labelString: 'Month'
-			                    }
-			                }],
-			                yAxes: [{
-			                    display: true,
-			                    scaleLabel: {
-			                        display: true,
-			                        labelString: 'Value'
-			                    }
-			                }]
-			            }
-					  }
-				  
-				};
+			type: 'bar',
+			data: {
+				labels: [month[(setMonth-11) % 12], month[(setMonth-10) % 12], month[(setMonth-9) % 12], month[(setMonth-8) % 12], month[(setMonth-7) % 12], month[(setMonth-6) % 12], month[(setMonth-5) % 12], month[(setMonth-4) % 12],month[(setMonth-3) % 12], month[(setMonth-2) % 12], month[(setMonth-1) % 12], month[setMonth % 12]],
+				datasets: [{
+					label: 'Profit',
+					data: [oneP, twoP, threeP, fourP, fiveP, sixP, sevenP, eightP, nineP, tenP, elevP, twelP],
+					backgroundColor: "rgba(104, 163, 221, 0.5)"
+				}, {
+					label: 'Cost',
+					data: [one, two, three, four, five, six, seven, eight, nine, ten, elev, twel],
+					backgroundColor: "rgba(245, 0, 0, 0.5)"
+				}]
+			},
+			options: {
+				responsive: true,
+				title:{
+					display:true,
+					text:'Product Revenue and Expend'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+				}
+			}
+		};
 				
-				var ctx = document.getElementById('canvas1').getContext('2d');
-				var index = new Chart(ctx, myBarChart);
-
+		var ctx = document.getElementById('canvas1').getContext('2d');
+		var index = new Chart(ctx, myBarChart);
 		</script>
 	</body>
 </html>
