@@ -1,3 +1,4 @@
+
 <?php
 	session_start();
 	date_default_timezone_set('America/New_York');
@@ -7,7 +8,9 @@
 	createAdmin();
 	include("indexAction.php");
 ?>
-<html class="html">
+
+<!DOCTYPE html>
+<html class="html" lang="en">
 	
 	<head>
 		<title>Login </title>
@@ -26,11 +29,15 @@
 				<div class="avatar">
 					<?php echo '<img src="' . $avatar . '"/>';?>
 				</div>
-				<input type="text" placeholder="username" name="username" value="admin" required>
+
+				<label for="username">Username</label>
+				<input type="text" id="username" placeholder="username" name="username" value="admin" required>
 				<div class="bar">
 					<i></i>
 				</div>
-				<input type="password" placeholder="password" name="password" value="admin" required>
+
+				<label for="password">Password</label>
+				<input type="password" id="password" placeholder="password" name="password" value="admin" required>
 				<button class="wrapButton">Sign in</button>
 				<div class="error">
 					<?php echo $error; ?>
@@ -41,7 +48,7 @@
 			<a class="label" href="manageAccount.php">Manage Account</a>
 		</div>
 		<a class="credit" href="reference.php" target="_blank">credits</a>
-		<p class="default">default username:admin</br>default password:admin</p>
+		<p class="default">default username:admin<br>default password:admin</p>
 	</body>
 
 </html>
