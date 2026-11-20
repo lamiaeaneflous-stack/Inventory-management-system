@@ -224,7 +224,6 @@ table.pureTable tr:hover {
 table.pureTable th {
 	padding-top: 12px;
 	padding-bottom: 12px;
-	text-align: left;
 	background-color: #ddd;
 	color: black;
 	text-align: center;
