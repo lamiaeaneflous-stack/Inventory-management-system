@@ -53,11 +53,11 @@
 					<h1>Welcome <?php echo $login_session; ?></h1>
 				</div>
 				<div id="addItem">
-					<button id="editBtn" onclick="edit()">Edit</button>
-					<button id="addBtn" class="Btn">Add Item</button>
-					<button id="addBtn" class="Btn">Delete Item</button>
+					<button class="editBtn" onclick="edit()">Edit</button>
+					<button class="addBtn" class="Btn">Add Item</button>
+					<button class="addBtn" class="Btn">Delete Item</button>
 					<button id="updateBtn" class="Btn">Update Sale</button>
-					<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+					<form class="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<div id="addModal" onclick="model()" class="modal">
 							<div class="modal-content">
     							<span class="close">&times;</span>
@@ -70,7 +70,7 @@
 										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
 									</table>
 									<br>
-									<button id="addBtn" name="add">Add</button>
+									<button class="addBtn" name="add">Add</button>
 								</div>
 							</div>
 						</div>
@@ -85,7 +85,7 @@
 										<tr><td>Item ID: </td><td><input type="text" placeholder="itemId" name="itemId"></td></tr>
 									</table>
 									<br>
-									<button id="addBtn" name="delete">Delete</button>
+									<button class="addBtn" name="delete">Delete</button>
 								</div>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
 				
 				<br>
 				
-				<form id="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<form class="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 					<div id="Product_Panel">
 						<button name="edit" id="editBtn">Submit Change</button>
 						<div id="updateModal" onclick="model()" class="modal">
@@ -110,7 +110,7 @@
 										<tr><td>Date: </td><td><input type="date" placeholder="date" name="date"></td></tr>
 									</table>
 									<br>
-									<button id="editBtn" name="updateSale">Update Sale</button>
+									<button class="editBtn" name="updateSale">Update Sale</button>
 								</div>
 							</div>
 						</div>
