@@ -77,22 +77,22 @@
 				</div>
 				
 				<div id="mini_nav">
-					<div id="mini_board">
+					<div class="mini_board">
 						<div class = "mini_font"><a href="sales.php">Sales</a></div>
 						<img src="img/sales.png"/>
 					</div>
 					
-					<div id="mini_board">
+					<div class="mini_board">
 						<div class = "mini_font"><a href="inventory.php">Income</a></div>
 						<img src="img/income.png"/>
 					</div>
 					
-					<div id="mini_board">
+					<div class="mini_board">
 						<div class = "mini_font"><a href="comment.php">OnBoard</a></div>
 						<img src="img/chat.png" />
 					</div>
 					
-					<div id="mini_board">
+					<div class="mini_board">
 						<div class = "mini_font"><a href="#">Profile</a></div>
 						<?php echo '<img src="' . $avatar . '"/>';?>
 					</div>
