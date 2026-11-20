@@ -1,3 +1,4 @@
+
 <?php
 	include('session.php');
 	include('commentAction.php');
@@ -9,8 +10,8 @@
 	}
 ?>
 
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>message</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
@@ -19,7 +20,6 @@
 			var comments = <?php echo json_encode( $CommentRows ) ?>;
 		</script>
 		<script src="js/comment.js"></script>
-
 	</head>
 	<body>
 	<div id="top-bar">
@@ -30,25 +30,21 @@
 				<li><a href="reference.php" target="_blank">About</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
-			
-			
 		</nav>
 	</div>	
-		
 
-		<div id = "side-navagate-bar">
-			<div class = "toggle-btn" onclick="toggleSideBar()">
+		<div id="side-navagate-bar">
+			<button type="button" class="toggle-btn" onclick="toggleSideBar()" aria-label="Toggle navigation">
 				<span></span>
 				<span></span>
 				<span></span>
-			</div>
+			</button>
 			
 			<ul>
 				<li><h2 id="logo">Inventory Sales Management</h2></li>
 				<li><a href="sales.php">Sales</a></li>
 				<li><a href="inventory.php">Inventory</a></li>
 			</ul>
-			
 		</div>
 
 	<div id="block">
@@ -60,18 +56,16 @@
 				<h1>Message Board</h1>
 			</div>
 			
-			
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-				
 				<div id="Tasks_Panel-info">
-			
-					<h1 id = "me"></h1>
+					<h1 id="me">Messages</h1>
 					<div id="comment"></div>
 				</div>	
 				
-				<div class= "submit">
+				<div class="submit">
 					<div id="in">
-						<textarea class ="comment" type="text" name="comment" required></textarea>	
+						<label for="comment-input">Write a message</label>
+						<textarea id="comment-input" class="comment" name="comment" required></textarea>	
 					</div>
 					<div id="sub-btn">	
 						<button name="submit">submit</button>
