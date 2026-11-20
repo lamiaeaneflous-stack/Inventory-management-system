@@ -73,7 +73,7 @@
 				<br>
 				<input type="password" name="resetPassword" id="resetPassword" required>
 				<br>
-				<label class="label">(reset to default username and password and delete all data)</label>
+				<p class="label">(reset to default username and password and delete all data)</p>
 				<br>
 				<button class="resetButton" name="reset">reset all</button>
 			</div>
