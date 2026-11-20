@@ -172,7 +172,7 @@ body{
 	color: black;
 }
 
-#mini_board {
+.mini_board {
 	float: left;
 	width: 18%;
 	margin-left: 2%;
