@@ -70,11 +70,26 @@
 								<button type="button" class="close" aria-label="Close">&times;</button>
 								<div class="modal-body">
 									<table>
-										<tr><th scope="row">Item Name:</th><td><input type="text" id="item" placeholder="itemName" name="item"></td></tr>
-										<tr><th scope="row">#In-Stock:</th><td><input type="text" id="storage" placeholder="storage" name="storage"></td></tr>
-										<tr><th scope="row">Unit Price:</th><td><input type="text" id="unitPrice" placeholder="unitPrice" name="unitPrice"></td></tr>
-										<tr><th scope="row">Sell Price:</th><td><input type="text" id="sellPrice" placeholder="sellPrice" name="sellPrice"></td></tr>
-										<tr><th scope="row">Date:</th><td><input type="date" id="date" placeholder="date" name="date"></td></tr>
+										<tr>
+											<td><label for="item">Item Name:</label></td>
+											<td><input type="text" id="item" placeholder="itemName" name="item"></td>
+										</tr>
+										<tr>
+											<td><label for="storage">#In-Stock:</label></td>
+											<td><input type="text" id="storage" placeholder="storage" name="storage"></td>
+										</tr>
+										<tr>
+											<td><label for="unitPrice">Unit Price:</label></td>
+											<td><input type="text" id="unitPrice" placeholder="unitPrice" name="unitPrice"></td>
+										</tr>
+										<tr>
+											<td><label for="sellPrice">Sell Price:</label></td>
+											<td><input type="text" id="sellPrice" placeholder="sellPrice" name="sellPrice"></td>
+										</tr>
+										<tr>
+											<td><label for="date">Date:</label></td>
+											<td><input type="date" id="date" name="date"></td>
+										</tr>
 									</table>
 									<br>
 									<button class="addBtn" name="add">Add</button>
@@ -91,7 +106,10 @@
 								<button type="button" class="close" aria-label="Close">&times;</button>
 								<div class="modal-body">
 									<table>
-										<tr><th scope="row">Item ID:</th><td><input type="text" id="itemId" placeholder="itemId" name="itemId"></td></tr>
+										<tr>
+											<td><label for="itemId">Item ID:</label></td>
+											<td><input type="text" id="itemId" placeholder="itemId" name="itemId"></td>
+										</tr>
 									</table>
 									<br>
 									<button class="addBtn" name="delete">Delete</button>
@@ -112,10 +130,22 @@
 								<button type="button" class="close" aria-label="Close">&times;</button>
 								<div class="modal-body">
 									<table>
-										<tr><th scope="row">Item Id:</th><td><input type="text" id="updateItemId" placeholder="itemId" name="itemId"></td></tr>
-										<tr><th scope="row">Item Name:</th><td><input type="text" id="updateItem" placeholder="itemName" name="item"></td></tr>
-										<tr><th scope="row">Quantity:</th><td><input type="text" id="quantity" placeholder="quantity" name="quantity"></td></tr>
-										<tr><th scope="row">Date:</th><td><input type="date" id="updateDate" placeholder="date" name="date"></td></tr>
+										<tr>
+											<td><label for="updateItemId">Item Id:</label></td>
+											<td><input type="text" id="updateItemId" placeholder="itemId" name="itemId"></td>
+										</tr>
+										<tr>
+											<td><label for="updateItem">Item Name:</label></td>
+											<td><input type="text" id="updateItem" placeholder="itemName" name="item"></td>
+										</tr>
+										<tr>
+											<td><label for="quantity">Quantity:</label></td>
+											<td><input type="text" id="quantity" placeholder="quantity" name="quantity"></td>
+										</tr>
+										<tr>
+											<td><label for="updateDate">Date:</label></td>
+											<td><input type="date" id="updateDate" name="date"></td>
+										</tr>
 									</table>
 									<br>
 									<button class="editBtn" name="updateSale">Update Sale</button>
