@@ -1,4 +1,3 @@
-
 <?php
 	include('session.php');
     $sql = 'SELECT * FROM product';
@@ -59,10 +58,10 @@
 				</div>
 
 				<div id="addItem">
-					<button class="editBtn" onclick="edit()">Edit</button>
-					<button class="addBtn Btn">Add Item</button>
-					<button class="addBtn Btn">Delete Item</button>
-					<button id="updateBtn" class="Btn">Update Sale</button>
+					<button type="button" class="editBtn" onclick="edit()">Edit</button>
+					<button type="button" class="addBtn Btn">Add Item</button>
+					<button type="button" class="addBtn Btn">Delete Item</button>
+					<button type="button" id="updateBtn" class="Btn">Update Sale</button>
 
 					<form class="submit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						<div id="addModal" class="modal">
@@ -70,6 +69,10 @@
 								<button type="button" class="close" aria-label="Close">&times;</button>
 								<div class="modal-body">
 									<table>
+										<tr>
+											<th scope="col">Field</th>
+											<th scope="col">Value</th>
+										</tr>
 										<tr>
 											<td><label for="item">Item Name:</label></td>
 											<td><input type="text" id="item" placeholder="itemName" name="item"></td>
@@ -107,6 +110,10 @@
 								<div class="modal-body">
 									<table>
 										<tr>
+											<th scope="col">Field</th>
+											<th scope="col">Value</th>
+										</tr>
+										<tr>
 											<td><label for="itemId">Item ID:</label></td>
 											<td><input type="text" id="itemId" placeholder="itemId" name="itemId"></td>
 										</tr>
@@ -130,6 +137,10 @@
 								<button type="button" class="close" aria-label="Close">&times;</button>
 								<div class="modal-body">
 									<table>
+										<tr>
+											<th scope="col">Field</th>
+											<th scope="col">Value</th>
+										</tr>
 										<tr>
 											<td><label for="updateItemId">Item Id:</label></td>
 											<td><input type="text" id="updateItemId" placeholder="itemId" name="itemId"></td>
@@ -156,16 +167,10 @@
 				</form>
 
 				<script>
-					// Get the modal
 					var modal = document.getElementsByClassName("modal");
-
-					// Get the button that opens the modal
 					var btn = document.getElementsByClassName("Btn");
-
-					// Get the element that closes the modal
 					var span = document.getElementsByClassName("close");
 
-					// When the user clicks the button, open the modal
 					btn[0].onclick = function() {
 					    modal[0].style.display = "block";
 					}
@@ -178,7 +183,6 @@
 					    modal[2].style.display = "block";
 					}
 
-					// When the user clicks on close, close the modal
 					span[0].onclick = function() {
 					    modal[0].style.display = "none";
 					}
@@ -191,7 +195,6 @@
 					    modal[2].style.display = "none";
 					}
 
-					// When the user clicks anywhere outside of the modal, close it
 					window.onclick = function(event) {
 					    for (var i = 0; i < modal.length; i++) {
 					        if (event.target == modal[i]) {
