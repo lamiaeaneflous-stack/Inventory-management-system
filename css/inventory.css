@@ -68,7 +68,7 @@
 	width: auto;
 }
 
-#editBtn {
+.editBtn {
 	display: inline-block;
 	padding: 8px 10px;
 	font-size: 15px;
@@ -83,11 +83,11 @@
 	box-shadow: 0 3px #999;
 }
 
-#editBtn:hover {
+.editBtn:hover {
 	background-color: #3e8e41
 }
 
-#editBtn:active {
+.editBtn:active {
 	background-color: #3e8e41;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
@@ -118,7 +118,7 @@
 	transform: translateY(4px);
 }
 
-#addBtn {
+.addBtn {
 	display: inline-block;
 	padding: 8px 10px;
 	font-size: 15px;
@@ -134,11 +134,11 @@
 	
 }
 
-#addBtn:hover {
+.addBtn:hover {
 	background-color: tomato
 }
 
-#addBtn:active {
+.addBtn:active {
 	background-color: tomato;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
