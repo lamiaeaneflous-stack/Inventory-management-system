@@ -29,7 +29,8 @@
 		<title>Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 		<script src="js/dashboard.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"
+                integrity="sha256-XF6g5p8nM2z..." crossorigin="anonymous"></script>
 		<script>
 			var comments = <?php echo json_encode( $CommentRows ) ?>;
 			var products = <?php echo json_encode( $rows ) ?>;
